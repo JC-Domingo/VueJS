@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	$projects = \App\Project::all();
-
-    return view('welcome', compact('projects'));
+    return view('welcome');
 });
 
-route
+Route::get('projects/create', 'ProjectsController@create');
+Route::post('projects', 'ProjectsController@store');
